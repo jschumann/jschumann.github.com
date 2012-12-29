@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>datamapper-cheat-sheet - My Octopress Blog</title>
+  <meta name="author" content="James Schumann">
+
+  
+  <meta name="description" content="Datamapper-cheat-sheet Dec 29th, 2012 DataMapper, the ruby object relational mapper website: http://www.datamapper.org git: git://github.com/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jschumann.github.com/cheat-sheets/datamapper-cheat-sheet.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jschumann.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Datamapper-cheat-sheet</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T14:36:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time></p>
+  </header>
+  
+  <pre>
+DataMapper, the ruby object relational mapper
+  website:  http://www.datamapper.org
+  git:      git://github.com/datamapper/dm-core.git
+  mail:     http://groups.google.com/group/datamapper
+  now:      http://www.twitter.com/datamapper
+            irc://irc.freenode.net/datamapper
+            irc://irc.freenode.net/dm-hacking
+  before:   http://irclogger.com/.datamapper/
+
+http://irclogger.com/.dm-hacking/
+
+  bugs:     https://github.com/datamapper/dm-core/issues
+
+Setting up a Connection
+  DataMapper.setup(:default, "adapter://user:password@hostname/dbname")
+  supported adapters: mysql, sqlite, postgres, sqlite::memory:
+  additional adapters are in dm-more, (couchdb, rest, imap, file, saleforce...)
+  in-memory adapter: DataMapper.setup(:default, :adapter => 'in_memory')
+
+Creating a Model (with properties)
+  class Zoo
+    include DataMapper::Resource
+    property :id, Serial
+  end
+
+
+Properties
+  property :id,   Serial               # auto-incrementing PK
+  property :name, String, :key => true # natural key
+    # you must specify >= 1 key, CPK support 100%
+
+  # available data-types
+  property :description, Text # (lazy by default)
+  property :created_at,  DateTime
+  property :open,        Boolean
+  property :admission,   BigDecimal
+
+  # require dm-types for Csv, Enum, EpochTime, FilePath, Flag,
+  #  IPAddress, URI, Yaml and more
+
+Property Options (pass as hash)
+  :default, :required, :field (column name), :size, :length, :format,
+  :index, :unique_index, :ordinal, :auto_validation, :precision,
+  :scale, :accessor, :reader, :writer, :lazy
+
+
+Finders
+  Zoo.get(PK_HERE)
+  Zoo.first({see_below})
+  Zoo.all({see_below})
+
+Finder Options (pass as hash)
+  :conditions => ["property = ? and property = ?", 'value', 'value']
+  :conditions => {:property => 'value', ...}
+  :property => 'ZooNameHere' 
+     # any non-standard key => value pair is assumed a condition if not 
+     # otherwise recognized
+  :property.lte => 12.00  # <=
+           .gte           # >=
+           .gt            # >
+           .lt            # <
+           .not           # NOT =
+           .like          # LIKE
+           .in            # IN ()
+  'class.property' => 'value'
+  Class.relationship.property => 'value' # will automatically issue JOINS
+
+Finder Gotcha
+  :order => [:created_at.desc, ...] # descending sort
+                        .asc        # ascending
+
+
+Associations
+  has 1                    # has_one
+  has n                    # has_many
+  belongs_to :thing
+  has n, :more_things, :through => :things
+  has n, :things, :through => Resource # has_and_belongs_to_many
+
+Association Options
+  (any Finder Options)
+  :model => 'ClassNameHere'
+  :order => [:property.desc]
+  :child_key => [:property, ...]
+  :through => :other_association
+
+
+Validations (require 'dm-validations')
+  validates_presence_of     :title
+  validates_numericality_of :rating
+  validates_format_of       :email, :as => :email_address
+  validates_length_of       :summary, :in => (1..100)
+  validates_uniqueness_of   :slug
+  validates_with_method (do...end, :method_name)
+
+
+Callbacks AKA "Hooks"
+  Object-level
+    before :method_name, (do...end, :another_method_name)
+    after  :method_name, (do...end, :another_method_name)
+  Class-level
+    before_class_method :method_name, (do...end, :another_method_name)
+    after_class_method  :method_name, (do...end, :another_method_name)
+
+Callbacks Gotcha
+  Hooks act on 'self' and aren't passed an arguement
+  'self' for object-level hooks are the instance
+  'self' for class-level hooks are the class itself
+
+Misc. Stuff & Gotchas
+  Single Table Inheritance
+    property :type, Discriminator # then inherit from this model
+
+  Paranoia
+    property :deleted_at, ParanoidDateTime
+    property :deleted,    ParanoidBoolean
+
+  Multiple DB Connections
+    DataMapper.setup(:external, "adapter://username:password@hostname/dbname")
+    DataMapper.repository(:external) do...end
+    Association: has n, :things, :repository => repository(:external)
+    Finder: Thing.all(:repository => repository(:external))
+
+    DataMapper.setup(:colors_db,  "sqlite3:path/to/colors.db")
+    class Color
+       include DataMapper::Resource
+
+
+       def self.default_repository_name
+         :colors_db
+       end
+
+       property :name, String
+    end
+</pre>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T14:36:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/cheat-sheets/datamapper-cheat-sheet.html" data-via="" data-counturl="http://jschumann.github.com/cheat-sheets/datamapper-cheat-sheet.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - James Schumann -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
