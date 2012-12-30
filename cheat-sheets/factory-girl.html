@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>factory-girl - My Octopress Blog</title>
+  <meta name="author" content="James Schumann">
+
+  
+  <meta name="description" content="Factory-girl Dec 29th, 2012 Factory girl is an object factory library to be used with your tests. Installation:
+$ [sudo] gem install factory_girl or &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jschumann.github.com/cheat-sheets/factory-girl.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jschumann.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Factory-girl</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T15:15:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time></p>
+  </header>
+  
+  <pre>
+Factory girl is an object factory library to be used with your tests.
+
+Installation:
+$ [sudo] gem install factory_girl
+
+or with Rails >2.1 dependency management, add to environment.rb
+
+config.gem "factory_girl", :lib => false
+
+Then add:
+  require 'factory_girl'
+to your test_helper.rb or spec_helper.rb
+
+Defining factories:
+# This will guess the User class
+Factory.define :user do |u|
+  u.first_name 'John'
+  u.last_name  'Doe'
+  u.admin false
+end
+
+# This will use the User class (Admin would have been guessed)
+Factory.define :admin, :class => User do |u|
+  u.first_name 'Admin'
+  u.last_name  'User'
+  u.admin true
+end
+
+# This will copy the attributes from the parent factory to the current one with
+an ability to override them.
+Factory.define :super_user, :parent => :user do |u|
+  u.super_user true
+end
+
+Lazy Attributes:
+Factory.define :user do |u|
+  # ...
+  u.activation_code { User.generate_activation_code }
+end
+
+Dependent Attributes:
+Factory.define :user do |u|
+  u.first_name 'Joe'
+  u.last_name  'Blow'
+  u.email {|a| "#{a.first_name}.#{a.last_name}@example.com".downcase }
+end
+
+Associations:
+Factory.define :post do |p|
+  # ...
+  p.author {|author| author.association(:user, :last_name => 'Writely') }
+end
+
+# Or in short form
+Factory.define :post do |p|
+  p.association :author, :factory => :user
+end
+
+Sequences:
+# Defines a new sequence
+Factory.sequence :email do |n|
+  "person#{n}@example.com" 
+end
+
+#Uses the sequence
+Factory.next :email
+# => "person1@example.com"
+
+# can also be defined inline:
+Factory.define :user do |u|
+  u.sequence(:email) { |n| "persion#{n}@example.com" }
+end
+
+Callbacks:
+# Run a callback after building the record. Handy for Devise.
+Factory.define :user do |u|
+  u.after_build { |u| u.skip_confirmation! }
+end
+
+Using factories:
+# Build and save a User instance
+Factory(:user)
+
+# Build a User instance and override the first_name property
+Factory.build(:user, :first_name => 'Joe')
+
+# Return an attributes Hash that can be used to build a User instance
+attrs = Factory.attributes_for(:user)
+</pre>
+
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T15:15:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/cheat-sheets/factory-girl.html" data-via="" data-counturl="http://jschumann.github.com/cheat-sheets/factory-girl.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - James Schumann -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

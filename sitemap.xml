@@ -5,11 +5,39 @@
         <lastmod>2012-12-29T12:21:23-05:00</lastmod>
     </url>
     <url>
-        <loc>http://jschumann.github.com/cheat-sheets/datamapper-cheat-sheet.html</loc>
+        <loc>http://jschumann.github.com/cheat-sheets/install-cd.html</loc>
+        <lastmod>2012-12-29T15:18:51-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/factory-girl.html</loc>
+        <lastmod>2012-12-29T15:15:54-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/chef.html</loc>
+        <lastmod>2012-12-29T15:15:07-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/haml.html</loc>
+        <lastmod>2012-12-29T15:16:43-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/knife.html</loc>
+        <lastmod>2012-12-29T15:17:21-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/rspec.html</loc>
+        <lastmod>2012-12-29T15:17:59-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/datamapper.html</loc>
         <lastmod>2012-12-29T14:38:37-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/</loc>
         <lastmod>2012-12-29T12:21:23-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/virtual-box-drupal-rails.html</loc>
+        <lastmod>2012-12-29T15:34:43-05:00</lastmod>
     </url>
 </urlset>
