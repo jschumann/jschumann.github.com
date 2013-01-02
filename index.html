@@ -9,7 +9,8 @@
   <meta name="author" content="James Schumann">
 
   
-  <meta name="description" content="Blog Archives Recent Posts GitHub Repos Status updating&#8230; @jschumann on GitHub $.domReady(function(){ if (!window.jXHR){ var jxhr = document. &hellip;">
+  <meta name="description" content="I was setting up a new Chef server on Ubuntu 12.04 and for some reason the Chef Server
+and Chef Web UI wouldn&#8217;t automatically start on (re)boot &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +64,72 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/02/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/">Chef Server Not Surviving Reboot on Ubuntu 12.04</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-02T08:54:00-05:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was setting up a new Chef server on Ubuntu 12.04 and for some reason the Chef Server
+and Chef Web UI wouldn&#8217;t automatically start on (re)boot. I found the solution here:</p>
+
+<p>http://tickets.opscode.com/browse/CHEF-3204</p>
+
+<p>In case that link dries up, here&#8217;s the short answer:</p>
+
+<p>First:</p>
+
+<pre>
+sudo update-rc.d -f couchdb remove
+sudo update-rc.d -f rabbitmq-server remove
+sudo update-rc.d -f chef-solr remove
+sudo update-rc.d -f chef-expander remove
+sudo update-rc.d -f chef-server remove
+sudo update-rc.d -f chef-server-webui remove
+</pre>
+
+
+<p>Then:</p>
+
+<pre>
+# the dots are required
+sudo update-rc.d couchdb start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d rabbitmq-server start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d chef-solr start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d chef-expander start 21 2 3 4 5 . stop 21 0 1 6 .
+sudo update-rc.d chef-server start 21 2 3 4 5 . stop 21 0 1 6 .
+sudo update-rc.d chef-server-webui start 22 2 3 4 5 . stop 20 0 1 6 .
+</pre>
+
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -74,6 +141,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/">Chef Server Not Surviving Reboot on Ubuntu 12.04</a>
+      </li>
     
   </ul>
 </section>

@@ -4,7 +4,7 @@
   <title><![CDATA[Free as in Time]]></title>
   <link href="http://jschumann.github.com/atom.xml" rel="self"/>
   <link href="http://jschumann.github.com/"/>
-  <updated>2013-01-02T08:53:03-05:00</updated>
+  <updated>2013-01-02T08:58:22-05:00</updated>
   <id>http://jschumann.github.com/</id>
   <author>
     <name><![CDATA[James Schumann]]></name>
@@ -12,5 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chef Server Not Surviving Reboot on Ubuntu 12.04]]></title>
+    <link href="http://jschumann.github.com/blog/2013/01/02/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/"/>
+    <updated>2013-01-02T08:54:00-05:00</updated>
+    <id>http://jschumann.github.com/blog/2013/01/02/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04</id>
+    <content type="html"><![CDATA[<p>I was setting up a new Chef server on Ubuntu 12.04 and for some reason the Chef Server
+and Chef Web UI wouldn&#8217;t automatically start on (re)boot. I found the solution here:</p>
+
+<p>http://tickets.opscode.com/browse/CHEF-3204</p>
+
+<p>In case that link dries up, here&#8217;s the short answer:</p>
+
+<p>First:</p>
+
+<pre>
+sudo update-rc.d -f couchdb remove
+sudo update-rc.d -f rabbitmq-server remove
+sudo update-rc.d -f chef-solr remove
+sudo update-rc.d -f chef-expander remove
+sudo update-rc.d -f chef-server remove
+sudo update-rc.d -f chef-server-webui remove
+</pre>
+
+
+<p>Then:</p>
+
+<pre>
+# the dots are required
+sudo update-rc.d couchdb start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d rabbitmq-server start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d chef-solr start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d chef-expander start 21 2 3 4 5 . stop 21 0 1 6 .
+sudo update-rc.d chef-server start 21 2 3 4 5 . stop 21 0 1 6 .
+sudo update-rc.d chef-server-webui start 22 2 3 4 5 . stop 20 0 1 6 .
+</pre>
+
+]]></content>
+  </entry>
   
 </feed>
