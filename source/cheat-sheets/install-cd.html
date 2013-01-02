@@ -1,0 +1,20 @@
+---
+layout: page
+title: "install-cd"
+date: 2012-12-29 15:18
+comments: true
+sharing: true
+footer: true
+---
+<pre>
+BUILD=/media/73be3b76-bf5b-4c01-9139-dbfe165e8a37/allspark-image/
+IMAGE=/media/73be3b76-bf5b-4c01-9139-dbfe165e8a37/ISOs/allspark.iso
+mkisofs -r -V "Custom Ubuntu Install CD" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o $IMAGE $BUILD
+</pre>
+
+<pre>
+Edit /syslinux/syslinux.cfg
+Add /preseed/hostname.seed
+Add /finisher/hostname_post_install.sh
+</pre>
+

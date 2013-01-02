@@ -1,0 +1,26 @@
+---
+layout: page
+title: "knife"
+date: 2012-12-29 15:17
+comments: true
+sharing: true
+footer: true
+---
+Cheat Sheet for Knife, the command line interface for Opscode's Chef.
+<pre>
+knife cookbook upload [cookbook-name]
+knife role from file roles/ubuntu.rb
+knife node run_list add shockwave.wrdsb.ca "role[ubuntu]"
+knife node show spectro.wrdsb.ca
+
+** NODE COMMANDS **
+knife node list (options)
+knife node from file FILE (options)
+knife node run_list add [NODE] [ENTRY] (options)
+knife node bulk delete REGEX (options)
+knife node create NODE (options)
+knife node show NODE (options)
+knife node delete NODE (options)
+knife node edit NODE (options)
+knife node run_list remove [NODE] [ENTRY] (options)
+</pre>
