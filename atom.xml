@@ -4,7 +4,7 @@
   <title><![CDATA[Free as in Time]]></title>
   <link href="http://jschumann.github.com/atom.xml" rel="self"/>
   <link href="http://jschumann.github.com/"/>
-  <updated>2013-01-02T08:58:22-05:00</updated>
+  <updated>2013-01-02T08:59:49-05:00</updated>
   <id>http://jschumann.github.com/</id>
   <author>
     <name><![CDATA[James Schumann]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Chef Server Not Surviving Reboot on Ubuntu 12.04]]></title>
-    <link href="http://jschumann.github.com/blog/2013/01/02/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/"/>
-    <updated>2013-01-02T08:54:00-05:00</updated>
-    <id>http://jschumann.github.com/blog/2013/01/02/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04</id>
+    <link href="http://jschumann.github.com/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/"/>
+    <updated>2012-12-14T09:54:00-05:00</updated>
+    <id>http://jschumann.github.com/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04</id>
     <content type="html"><![CDATA[<p>I was setting up a new Chef server on Ubuntu 12.04 and for some reason the Chef Server
 and Chef Web UI wouldn&#8217;t automatically start on (re)boot. I found the solution here:</p>
 
