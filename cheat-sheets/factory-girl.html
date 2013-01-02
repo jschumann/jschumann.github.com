@@ -38,8 +38,6 @@ $ [sudo] gem install factory_girl or &hellip;">
   <header role="banner"><hgroup>
   <h1><a href="/">Free as in Time</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
-  
 </hgroup>
 
 </header>
@@ -197,7 +195,7 @@ attrs = Factory.attributes_for(:user)
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/cheat-sheets/factory-girl.html" data-via="" data-counturl="http://jschumann.github.com/cheat-sheets/factory-girl.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/cheat-sheets/factory-girl.html" data-via="jschumann" data-counturl="http://jschumann.github.com/cheat-sheets/factory-girl.html" >Tweet</a>
   
   
   
@@ -219,6 +217,51 @@ attrs = Factory.attributes_for(:user)
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jschumann">@jschumann</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jschumann',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jschumann", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jschumann" class="twitter-follow-button" data-show-count="false">Follow @jschumann</a>
+  
+</section>
 
 
 
