@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Free as in Time]]></title>
+  <link href="http://jschumann.github.com/atom.xml" rel="self"/>
+  <link href="http://jschumann.github.com/"/>
+  <updated>2013-01-02T08:49:37-05:00</updated>
+  <id>http://jschumann.github.com/</id>
+  <author>
+    <name><![CDATA[James Schumann]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>

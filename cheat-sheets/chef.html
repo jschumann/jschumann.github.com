@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Free as in Time</title>
+  <title>chef - Free as in Time</title>
   <meta name="author" content="James Schumann">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="Chef Dec 29th, 2012 Rake Tasks The repository contains a Rakefile that includes tasks that are installed with the Chef libraries. To view the tasks &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jschumann.github.com/">
+  <link rel="canonical" href="http://jschumann.github.com/cheat-sheets/chef.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,15 +62,85 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Chef</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T15:14:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time></p>
+  </header>
+  
+  Rake Tasks
+
+The repository contains a Rakefile that includes tasks that are installed with the Chef libraries. To view the tasks available with in the repository with a brief description, run rake -T.
+
+The default task (default) is run when executing rake with no arguments. It will call the task test_cookbooks.
+
+The following tasks are not directly replaced by knife sub-commands:
+
+bundle_cookbook - Creates cookbook tarballs in the pkgs/ dir.
+install - Calls update, roles and upload_cookbooks Rake tasks.
+ssl_cert - Create self-signed SSL certificates in certificates/ dir.
+update - Update the repository from source control server, understands git and svn.
+The following tasks duplicate functionality from knife and may be removed in a future version of Chef:
+
+metadata - replaced by knife cookbook metadata -a.
+new_cookbook - replaced by knife cookbook create.
+role - replaced by knife role from file.
+roles - iterates over the roles and uploads with knife role from file.
+test_cookbooks - replaced by knife cookbook test -a.
+test_cookbook - replaced by knife cookbook test COOKBOOK.
+upload_cookbooks - replaced by knife cookbook upload -a.
+upload_cookbook - replaced by knife cookbook upload COOKBOOK.
+
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-29T15:14:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/cheat-sheets/chef.html" data-via="" data-counturl="http://jschumann.github.com/cheat-sheets/chef.html" >Tweet</a>
   
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  
 </div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -87,6 +157,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
