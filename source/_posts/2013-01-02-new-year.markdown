@@ -1,0 +1,27 @@
+---
+layout: post
+title: "New Year, New Blog"
+date: 2013-01-02 09:38
+comments: true
+categories: 
+---
+I've decided to migrate my website from WordPress to [Octopress](http://octopress.org/).
+
+Octopress is a static website generator, built on [Jekyll](http://github.com/mojombo/jekyll), 
+with some goodies Jekyll doesn't ship with.
+
+For a while now my website has been the odd man out. Updating a WordPress site just doesn't 
+fit with the rest of my workflow. I now spend most of my time editing text files and 
+issuing commands from a terminal, and I store everything I build in git. 
+Having my site generated from content stored in a git repository feels more natural 
+to me now than storing it in a database edited via a browser interface. 
+There's no mental effort in switching to updating my website and back. It's now 
+just one project among many, all using the same set of tools and environments.
+
+I'll be deploying the site to Github, at least for now. The workflow for Octopress in general,
+and deployment via GitHub in particular, is very simple. Performance should also improve, as
+serving a static site should be faster than a database-driven CMS, regardless of where I host it.
+Having to cache the hell out of WordPress, and thereby turning it into a 'static' site anyway, seems silly.
+
+We'll see how this goes. I'm be moving some content over from the old site for a while, 
+and letting the rest of it fall off the internet.
