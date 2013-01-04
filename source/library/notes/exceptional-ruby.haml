@@ -5,4 +5,102 @@ comments: true
 sharing: true
 footer: true
 ---
+%h2 Introduction
+
+%h2 What is a failure?
+%h3 Definitions
+%h3 Failure as a breach of contract
+%h3 Reasons for failure
+
+%h2 The life-cycle of an exception
+%h3 It all starts with a raise (or a fail)
+%h3 Calling raise
+%h3 Overriding raise for fun and profit
+%h4 A simple raise replacement
+%h4 What’s the time? Hammertime!
+%h3 raise internals
+%h4 Step 1: Call #exception to get the exception
+%h5 Implementing your own #exception methods
+%h4 Step 2: #set_backtrace
+%h4 Step 3: Set the global exception variable
+%h4 Step 4: Raise the exception up the call stack
+%h3 ensure
+%h4 ensure with explicit return
+%h3 Coming to the rescue
+%h4 Dynamic rescue clauses
+%h4 rescue as a statement modifier
+%h3 If at first you don’t succeed, retry, retry again
+%h3 raise during exception handling
+%h4 Nested exceptions
+%h4 More ways to re-raise
+%h4 Disallowing double-raise
+%h3 else
+%h3 Uncaught exceptions
+%h3 Exceptions in threads
+%h3 Are Ruby exceptions slow?
+
+%h2 Responding to failures
+%h3 Failure flags and benign values
+%h3 Reporting failure to the console
+%h4 Warnings as errors
+%h3 Remote failure reporting
+%h4 A true story of cascading failures
+%h4 Bulkheads 
+%h4 The Circuit Breaker pattern
+%h3 Ending the program
+
+%h2 Alternatives to exceptions
+%h3 Sideband data
+%h3 Multiple return values
+%h3 Output parameters
+%h3 Caller-supplied fallback strategy
+%h3 Global variables
+%h3 Process reification
+%h3 Beyond exceptions
+
+%h2 Your failure handling strategy
+%h3 Exceptions shouldn’t be expected
+%h3 A rule of thumb for raising
+%h3 Use throw for expected cases
+%h3 What constitutes an exceptional case?
+%h3 Caller-supplied fallback strategy
+%h3 Some questions before raising
+%h4 #1: Is the situation truly unexpected?
+%h4 #2: Am I prepared to end the program?
+%h4 #3: Can I punt the decision up the call chain?
+%h4 #4: Am I throwing away valuable diagnostics?
+%h4 #5: Would continuing result in a less informative exception?
+%h3 Isolate exception handling code
+%h4 Isolating exception policy with a Contingency Method
+%h3 Exception Safety
+%h4 The three guarantees
+%h4 When can exceptions be raised?
+%h4 Exception safety testing
+%h4 Implementation of the exception-safety tester
+%h4 Validity vs. consistency
+%h3 Be specific when eating exceptions
+%h3 Namespace your own exceptions
+%h3 Tagging exceptions with modules
+%h3 The no-raise library API
+%h3 Three essential exception classes
+%h4 Failures: the user’s perspective
+%h4 Three classes of exception
+
+%h2 Conclusion
+
+%h2 References
+
+%h2 Appendix A: Exception tester implementation 89
+
+%h2 Appendix B: An incomplete tour of ruby’s standard exceptions
+%h3 NoMemoryError
+%h3 ScriptError
+%h3 SignalException
+%h3 StandardError
+%h3 RuntimeError
+%h3 IOError
+%h3 ArgumentError, RangeError, TypeError, IndexError
+%h3 SystemCallError
+%h3 SecurityError
+%h3 Timeout::Error
 
