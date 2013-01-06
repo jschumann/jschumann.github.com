@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Notes on Lean from the Trenches - Free as in Time</title>
+  <meta name="author" content="James Schumann">
+
+  
+  <meta name="description" content="Notes on Lean From the Trenches Part I — How We Work
+1. About the Project
+1.1 Timeline
+1.2 How We Sliced the Elephant
+1.3 How We Involved the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jschumann.github.com/library/notes/lean-from-the-trenches.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Free as in Time" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Free as in Time</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jschumann.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/library/index.html">Library</a></li>
+  <li><a href="/cheat-sheets/index.html">Cheat Sheets</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Notes on Lean From the Trenches</h1>
+    
+  </header>
+  
+  <h2>Part I — How We Work</h2>
+<h3>1. About the Project</h3>
+<h4>1.1 Timeline</h4>
+<h4>1.2 How We Sliced the Elephant</h4>
+<h4>1.3 How We Involved the Customer</h4>
+<h3>2. Structuring the Teams</h3>
+<h3>3. Attending the Daily Cocktail Party</h3>
+<h4>3.1 First Tier: Feature Team Daily Stand-up</h4>
+<h4>3.2 Second Tier: Sync Meetings per Specialty</h4>
+<h4>3.3 Third Tier: Project Sync Meeting</h4>
+<h3>4. The Project Board</h3>
+<h4>4.1 Our Cadences</h4>
+<h4>4.2 How We Handle Urgent Issues and Impediments</h4>
+<h3>5. Scaling the Kanban Boards</h3>
+<h3>6. Tracking the High-Level Goal</h3>
+<h3>7. Defining Ready and Done</h3>
+<h4>7.1 Ready for Development</h4>
+<h4>7.2 Ready for System Test</h4>
+<h4>7.3 How This Improved Collaboration</h4>
+<h3>8 Handling Tech Stories</h3>
+<h4>8.1 Example 1: System Test Bottleneck</h4>
+<h4>8.2 Example 2: Day Before the Release</h4>
+<h4>8.3 Example 3: The 7-Meter Class</h4>
+<h3>9. Handling Bugs</h3>
+<h4>9.1 Continuous System Test</h4>
+<h4>9.2 Fix the Bugs Immediately!</h4>
+<h4>9.3 Why We Limit the Number of Bugs in the Bug Tracker</h4>
+<h4>9.4 Visualizing Bugs</h4>
+<h4>9.5 Preventing Recurring Bugs</h4>
+<h3>10. Continuously Improving the Process</h3>
+<h4>10.1 Team Retrospectives</h4>
+<h4>10.2 Process Improvement Workshops</h4>
+<h4>10.3 Managing the Rate of Change</h4>
+<h3>11. Managing Work in Progress</h3>
+<h4>11.1 Using WIP Limits</h4>
+<h4>11.2 Why WIP Limits Apply Only to Features</h4>
+<h3>12. Capturing and Using Process Metrics</h3>
+<h4>12.1 Velocity (Features per Week)</h4>
+<h4>12.2 Why We Don’t Use Story Points</h4>
+<h4>12.3 Cycle Time (Weeks per Feature)</h4>
+<h4>12.4 Cumulative Flow</h4>
+<h4>12.5 Process Cycle Efficiency</h4>
+<h3>13. Planning the Sprint and Release</h3>
+<h4>13.1 Backlog Grooming</h4>
+<h4>13.2 Selecting the Top Ten Features</h4>
+<h4>13.3 Why We Moved Backlog Grooming Out of the Sprint Planning Meeting</h4>
+<h4>13.4 Planning the Release</h4>
+<h3>14. How We Do Version Control</h3>
+<h4>14.1 No Junk on the Trunk</h4>
+<h4>14.2 Team Branches</h4>
+<h4>14.3 System Test Branch</h4>
+<h3>15. Why We Use Only Physical Kanban Boards</h3>
+<h3>16. What We Learned</h3>
+<h4>16.1 Know Your Goal</h4>
+<h4>16.2 Experiment</h4>
+<h4>16.3 Embrace Failure</h4>
+<h4>16.4 Solve Real Problems</h4>
+<h4>16.5 Have Dedicated Change Agents</h4>
+<h4>16.6 Involve People</h4>
+<h2>Part II — A Closer Look at the Techniques</h2>
+<h3>17. Agile and Lean in a Nutshell</h3>
+<h4>17.1 Agile in a Nutshell</h4>
+<h4>17.2 Lean in a Nutshell</h4>
+<h4>17.3 Scrum in a Nutshell</h4>
+<h4>17.4 XP in a Nutshell</h4>
+<h4>17.5 Kanban in a Nutshell</h4>
+<h3>18. Reducing the Test Automation Backlog</h3>
+<h4>18.1 What to Do About It</h4>
+<h4>18.2 How to Improve Test Coverage a Little Bit Each Iteration</h4>
+<h4>18.3 Step 1: List Your Test Cases</h4>
+<h4>18.4 Step 2: Classify Each Test</h4>
+<h4>18.5 Step 3: Sort the List in Priority Order</h4>
+<h4>18.6 Step 4: Automate a Few Tests Each Iteration</h4>
+<h4>18.7 Does This Solve the Problem?</h4>
+<h3>19. Sizing the Backlog with Planning Poker</h3>
+<h4>19.1 Estimating Without Planning Poker</h4>
+<h4>19.2 Estimating with Planning Poker</h4>
+<h4>19.3 Special Cards</h4>
+<h3>20. Cause-Effect Diagrams</h3>
+<h4>20.1 Solve Problems, Not Symptoms</h4>
+<h4>20.2 The Lean Problem-Solving Approach: A3 Thinking</h4>
+<h4>20.3 How to Use Cause-Effect Diagrams</h4>
+<h4>20.4 Example 1: Long Release Cycle</h4>
+<h4>20.5 Example 2: Defects Released to Production</h4>
+<h4>20.6 Example 3: Lack of Pair Programming</h4>
+<h4>20.7 Example 4: Lots of Problems</h4>
+<h4>20.8 Practical Issues: How to Create and Maintain the Diagrams</h4>
+<h4>20.9 Pitfalls</h4>
+<h4>20.10 Why Use Cause-Effect Diagrams?</h4>
+<h3>21. Final Words</h3>
+<h2>A1. Glossary: How We Avoid Buzzword Bingo</h2>
+
+  
+    <footer>
+      
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/library/notes/lean-from-the-trenches.html" data-via="jschumann" data-counturl="http://jschumann.github.com/library/notes/lean-from-the-trenches.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/new-year/">New Year, New Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/">Chef Server Not Surviving Reboot on Ubuntu 12.04</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jschumann", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jschumann" class="twitter-follow-button" data-show-count="false">Follow @jschumann</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - James Schumann -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

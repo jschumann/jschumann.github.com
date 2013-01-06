@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>haml - Free as in Time</title>
+  <title>Notes on Deploying with JRuby - Free as in Time</title>
   <meta name="author" content="James Schumann">
 
   
-  <meta name="description" content="Haml Dec 29th, 2012 http://haml-lang.com/tutorial.html Dec 29th, 2012 Tweet Recent Posts New Year, New Blog Chef Server Not Surviving Reboot on &hellip;">
+  <meta name="description" content="Notes on Deploying With JRuby 1. Getting Started with JRuby
+1.1 What Makes JRuby So Great?
+1.2 Introducing Warbler
+1.3 Preparing Twitalytics for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jschumann.github.com/cheat-sheets/haml.html">
+  <link rel="canonical" href="http://jschumann.github.com/library/notes/deploying-with-jruby.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -65,47 +68,88 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Haml</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-29T15:16:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time></p>
+    <h1 class="entry-title">Notes on Deploying With JRuby</h1>
+    
   </header>
   
-  http://haml-lang.com/tutorial.html
+  <h2>1. Getting Started with JRuby</h2>
+<h3>1.1 What Makes JRuby So Great?</h3>
+<h3>1.2 Introducing Warbler</h3>
+<h3>1.3 Preparing Twitalytics for JRuby</h3>
+<h3>1.4 Configuring Warbler for Twitalytics</h3>
+<h3>1.5 Wrapping Up</h3>
+<h2>2. Creating a Deployment Environment</h2>
+<h3>2.1 Creating a Virtual Server</h3>
+<h3>2.2 Provisioning with Puppet</h3>
+<h3>2.3 Packaging the Deployment Environment</h3>
+<h3>2.4 Using Alternative Platforms</h3>
+<h3>2.5 Wrapping Up</h3>
+<h2>3. Deploying an Archive File</h2>
+<h3>3.1 Provisioning a Server</h3>
+<h3>3.2 Installing Apache Tomcat</h3>
+<h3>3.3 Creating the Deployment Script</h3>
+<h3>3.4 Using Precompiled Assets with Warbler</h3>
+<h3>3.5 Deploying to the Cloud</h3>
+<h3>3.6 Wrapping Up</h3>
+<h2>4. Creating a Trinidad Application</h2>
+<h3>4.1 What Is Traditional Deployment?</h3>
+<h3>4.2 Getting Started with Trinidad</h3>
+<h3>4.3 Adding Trinidad Extensions</h3>
+<h3>4.4 Choosing Alternatives to Trinidad</h3>
+<h3>4.5 Wrapping Up</h3>
+<h2>5. Deploying a Trinidad Application</h2>
+<h3>5.1 Provisioning a Server</h3>
+<h3>5.2 Installing Trinidad as a Service</h3>
+<h3>5.3 Hot-Deploying with Capistrano</h3>
+<h3>5.4 Configuring Apache</h3>
+<h3>5.5 Choosing Alternative Deployment Strategies</h3>
+<h3>5.6 Wrapping Up</h3>
+<h2>6. Creating a TorqueBox Application</h2>
+<h3>6.1 What Is an Application Server?</h3>
+<h3>6.2 Getting Started with TorqueBox</h3>
+<h3>6.3 Creating a Deployment Descriptor</h3>
+<h3>6.4 Using the Management Console</h3>
+<h3>6.5 Scheduling a Recurring Job</h3>
+<h3>6.6 Creating a Long-Running Daemon</h3>
+<h3>6.7 Running Background Jobs</h3>
+<h3>6.8 Pushing to the Browser with Stomplets</h3>
+<h3>6.9 Testing a TorqueBox Application</h3>
+<h3>6.10 Wrapping Up</h3>
+<h2>7. Deploying a TorqueBox Application</h2>
+<h3>7.1 Choosing a Deployment Strategy</h3>
+<h3>7.2 Creating a Deployment Environment</h3>
+<h3>7.3 Installing TorqueBox</h3>
+<h3>7.4 Deploying an Archive Filed</h3>
+<h3>7.5 Wrapping Up</h3>
+<h2>8. Clustering a TorqueBox Application</h2>
+<h3>8.1 Creating the Cluster</h3>
+<h3>8.2 Installing the Apache Cluster Module</h3>
+<h3>8.3 Deploying to the Cluster</h3>
+<h3>8.4 Using High-Availability Jobs and Services</h3>
+<h3>8.5 Using Session Replication</h3>
+<h3>8.6 Running in Domain Mode</h3>
+<h3>8.7 Wrapping Up</h3>
+<h2>9. Managing a JRuby Deployment</h2>
+<h3>9.1 Configuring the Runtime</h3>
+<h3>9.2 Inspecting the Runtime with JMX</h3>
+<h3>9.3 Managing the Runtime with JMX</h3>
+<h3>9.4 Creating a Management Bean</h3>
+<h3>9.5 Profiling an Application</h3>
+<h3>9.6 Wrapping Up</h3>
+<h2>10. Using a Continuous Integration Server</h2>
+<h3>10.1 Installing Jenkins</h3>
+<h3>10.2 Creating a Git Depot</h3>
+<h3>10.3 Creating a Jenkins Job</h3>
+<h3>10.4 Archiving Artifacts with Jenkins</h3>
+<h3>10.5 Wrapping Up</h3>
 
   
     <footer>
-      <p class="meta">
-        
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-29T15:16:00-05:00" pubdate data-updated="true">Dec 29<span>th</span>, 2012</time>
-        
-      </p>
+      
       
         <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/cheat-sheets/haml.html" data-via="jschumann" data-counturl="http://jschumann.github.com/cheat-sheets/haml.html" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/library/notes/deploying-with-jruby.html" data-via="jschumann" data-counturl="http://jschumann.github.com/library/notes/deploying-with-jruby.html" >Tweet</a>
   
   
   

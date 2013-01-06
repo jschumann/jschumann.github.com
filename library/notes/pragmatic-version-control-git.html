@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Notes on Pragmatic Version Control Using Git - Free as in Time</title>
+  <meta name="author" content="James Schumann">
+
+  
+  <meta name="description" content="Notes on Pragmatic Version Control Using Git Part I — Welcome to the Distributed World
+1. Version Control the Git Way
+1.1 The Repository
+1.2 What &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jschumann.github.com/library/notes/pragmatic-version-control-git.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Free as in Time" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Free as in Time</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jschumann.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/library/index.html">Library</a></li>
+  <li><a href="/cheat-sheets/index.html">Cheat Sheets</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Notes on Pragmatic Version Control Using Git</h1>
+    
+  </header>
+  
+  <h2>Part I — Welcome to the Distributed World</h2>
+<h3>1. Version Control the Git Way</h3>
+<h4>1.1 The Repository</h4>
+<h4>1.2 What Should You Store?</h4>
+<h4>1.3 Working Trees</h4>
+<h4>1.4 Manipulating Files and Staying in Sync</h4>
+<h4>1.5 Tracking Projects, Directories, and Files</h4>
+<h4>1.6 Tracking Milestones with Tags</h4>
+<h4>1.7 Creating Alternate Histories with Branches</h4>
+<h4>1.8 Merging</h4>
+<h4>1.9 Locking Options</h4>
+<h4>1.10 Next Steps</h4>
+<h3>2. Setting Up Git</h3>
+<h4>2.1 Installing Git</h4>
+<h4>2.2 Configuring Git</h4>
+<h4>2.3 Using Git’s GUI</h4>
+<h4>2.4 Accessing Git’s Built-in Help</h4>
+<h3>3. Creating Your First Project</h3>
+<h4>3.1 Creating a Repository</h4>
+<h4>3.2 Making Changes</h4>
+<h4>3.3 Starting to Work with a Project</h4>
+<h4>3.4 Using and Understanding Branches</h4>
+<h4>3.5 Handling Releases</h4>
+<h4>3.6 Cloning a Remote Repository</h4>
+<h2>Part II — Everyday Git</h2>
+<h3>4. Adding and Committing: Git Basics</h3>
+<h4>4.1 Adding Files</h4>
+<h4>4.2 Committing Changes</h4>
+<h4>4.3 Seeing What Has Changed</h4>
+<h4>4.4 Managing Files</h4>
+<h3>5. Understanding and Using Branches</h3>
+<h4>5.1 What Are Branches?</h4>
+<h4>5.2 Creating a New Branch</h4>
+<h4>5.3 Merging Changes Between Branches</h4>
+<h4>5.4 Handling Conflicts</h4>
+<h4>5.5 Deleting Branches</h4>
+<h4>5.6 Renaming Branches</h4>
+<h3>6. Working with Git’s History</h3>
+<h4>6.1 Inspecting Git’s Log</h4>
+<h4>6.2 Specifying Revision Ranges</h4>
+<h4>6.3 Looking at Differences Between Versions</h4>
+<h4>6.4 Finding Out Who’s to Blame</h4>
+<h4>6.5 Following Content</h4>
+<h4>6.6 Undoing Changes</h4>
+<h4>6.7 Rewriting History</h4>
+<h3>7. Working with Remote Repositories</h3>
+<h4>7.1 Network Protocols</h4>
+<h4>7.2 Cloning a Remote Repository</h4>
+<h4>7.3 Keeping Up-to-Date</h4>
+<h4>7.4 Pushing Changes</h4>
+<h4>7.5 Adding New Remote Repositories</h4>
+<h3>8. Organizing Your Repository</h3>
+<h4>8.1 Marking Milestones with Tags</h4>
+<h4>8.2 Handling Release Branches</h4>
+<h4>8.3 Using Valid Names for Tags and Branches</h4>
+<h4>8.4 Tracking Multiple Projects</h4>
+<h4>8.5 Using Git Submodules to Track External Repositories</h4>
+<h3>9.Beyond the Basics</h3>
+<h4>9.1 Compacting Repository History</h4>
+<h4>9.2 Exporting Your Repository</h4>
+<h4>9.3 Rebasing a Branch</h4>
+<h4>9.4 Using the Reflog</h4>
+<h4>9.5 Bisecting Your Repository</h4>
+<h3>10. Migrating to Git</h3>
+<h4>10.1 Communicating with SVN</h4>
+<h4>10.2 Making Sure git-svn Is Available</h4>
+<h4>10.3 Importing a Subversion Repository</h4>
+<h4>10.4 Keeping Up-to-Date with a Subversion Repository</h4>
+<h4>10.5 Pushing Changes to SVN</h4>
+<h4>10.6 Importing from CVS</h4>
+<h3>11. Running a Git Server with Gitosis</h3>
+<h4>11.1 Making Sure Dependencies Are Met</h4>
+<h4>11.2 Installing Gitosis</h4>
+<h4>11.3 Creating Administrator Credentials</h4>
+<h4>11.4 Configuring the Server for Gitosis</h4>
+<h4>11.5 Initializing Gitosis</h4>
+<h4>11.6 Configuring Gitosis</h4>
+<h4>11.7 Adding New Repositories</h4>
+<h4>11.8 Setting Up a Public Repository</h4>
+<h4>11.9 Closing Thoughts</h4>
+<h2>Part III — Administration</h2>
+<h2>Part IV — Appendixes</h2>
+<h3>A1. Git Command Quick Reference</h3>
+<h4>A1.1 Setup and Initialization</h4>
+<h4>A1.2 Normal Usage</h4>
+<h4>A1.3 Branches</h4>
+<h4>A1.4 History</h4>
+<h4>A1.5 Remote Repositories</h4>
+<h4>A1.6 Git to SVN Bridge</h4>
+<h3>A2. Other Resources and Tools</h3>
+<h4>A2.1 Extras Bundled with Git</h4>
+<h4>A2.2 Third-Party Tools</h4>
+<h4>A2.3 Git Repository Hosting</h4>
+<h4>A2.4 Online Resources</h4>
+
+  
+    <footer>
+      
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/library/notes/pragmatic-version-control-git.html" data-via="jschumann" data-counturl="http://jschumann.github.com/library/notes/pragmatic-version-control-git.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/new-year/">New Year, New Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/">Chef Server Not Surviving Reboot on Ubuntu 12.04</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jschumann", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jschumann" class="twitter-follow-button" data-show-count="false">Follow @jschumann</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - James Schumann -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
