@@ -1,2 +1,22 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+article header {
+  padding-top: 0;
+}
+article header p.meta {
+  position: relative;
+}
+p.library-title {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+p.library-author {
+  margin-bottom: 0;
+  line-height: 1em;
+  padding-left: 20px;
+  font-size: 66%;
+}
+p.library-notes {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
