@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Notes on Exceptional Ruby - Free as in Time</title>
+  <meta name="author" content="James Schumann">
+
+  
+  <meta name="description" content="Notes on Exceptional Ruby Introduction
+What is a failure?
+Definitions
+Failure as a breach of contract
+Reasons for failure
+The life-cycle of an &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jschumann.github.com/library/notes/exceptional-ruby.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Free as in Time" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Free as in Time</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jschumann.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/library/index.html">Library</a></li>
+  <li><a href="/cheat-sheets/index.html">Cheat Sheets</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Notes on Exceptional Ruby</h1>
+    
+  </header>
+  
+  <h2>Introduction</h2>
+<h2>What is a failure?</h2>
+<h3>Definitions</h3>
+<h3>Failure as a breach of contract</h3>
+<h3>Reasons for failure</h3>
+<h2>The life-cycle of an exception</h2>
+<h3>It all starts with a raise (or a fail)</h3>
+<h3>Calling raise</h3>
+<h3>Overriding raise for fun and profit</h3>
+<h4>A simple raise replacement</h4>
+<h4>What’s the time? Hammertime!</h4>
+<h3>raise internals</h3>
+<h4>Step 1: Call #exception to get the exception</h4>
+<h5>Implementing your own #exception methods</h5>
+<h4>Step 2: #set_backtrace</h4>
+<h4>Step 3: Set the global exception variable</h4>
+<h4>Step 4: Raise the exception up the call stack</h4>
+<h3>ensure</h3>
+<h4>ensure with explicit return</h4>
+<h3>Coming to the rescue</h3>
+<h4>Dynamic rescue clauses</h4>
+<h4>rescue as a statement modifier</h4>
+<h3>If at first you don’t succeed, retry, retry again</h3>
+<h3>raise during exception handling</h3>
+<h4>Nested exceptions</h4>
+<h4>More ways to re-raise</h4>
+<h4>Disallowing double-raise</h4>
+<h3>else</h3>
+<h3>Uncaught exceptions</h3>
+<h3>Exceptions in threads</h3>
+<h3>Are Ruby exceptions slow?</h3>
+<h2>Responding to failures</h2>
+<h3>Failure flags and benign values</h3>
+<h3>Reporting failure to the console</h3>
+<h4>Warnings as errors</h4>
+<h3>Remote failure reporting</h3>
+<h4>A true story of cascading failures</h4>
+<h4>Bulkheads</h4>
+<h4>The Circuit Breaker pattern</h4>
+<h3>Ending the program</h3>
+<h2>Alternatives to exceptions</h2>
+<h3>Sideband data</h3>
+<h3>Multiple return values</h3>
+<h3>Output parameters</h3>
+<h3>Caller-supplied fallback strategy</h3>
+<h3>Global variables</h3>
+<h3>Process reification</h3>
+<h3>Beyond exceptions</h3>
+<h2>Your failure handling strategy</h2>
+<h3>Exceptions shouldn’t be expected</h3>
+<h3>A rule of thumb for raising</h3>
+<h3>Use throw for expected cases</h3>
+<h3>What constitutes an exceptional case?</h3>
+<h3>Caller-supplied fallback strategy</h3>
+<h3>Some questions before raising</h3>
+<h4>#1: Is the situation truly unexpected?</h4>
+<h4>#2: Am I prepared to end the program?</h4>
+<h4>#3: Can I punt the decision up the call chain?</h4>
+<h4>#4: Am I throwing away valuable diagnostics?</h4>
+<h4>#5: Would continuing result in a less informative exception?</h4>
+<h3>Isolate exception handling code</h3>
+<h4>Isolating exception policy with a Contingency Method</h4>
+<h3>Exception Safety</h3>
+<h4>The three guarantees</h4>
+<h4>When can exceptions be raised?</h4>
+<h4>Exception safety testing</h4>
+<h4>Implementation of the exception-safety tester</h4>
+<h4>Validity vs. consistency</h4>
+<h3>Be specific when eating exceptions</h3>
+<h3>Namespace your own exceptions</h3>
+<h3>Tagging exceptions with modules</h3>
+<h3>The no-raise library API</h3>
+<h3>Three essential exception classes</h3>
+<h4>Failures: the user’s perspective</h4>
+<h4>Three classes of exception</h4>
+<h2>Conclusion</h2>
+<h2>References</h2>
+<h2>Appendix A: Exception tester implementation 89</h2>
+<h2>Appendix B: An incomplete tour of ruby’s standard exceptions</h2>
+<h3>NoMemoryError</h3>
+<h3>ScriptError</h3>
+<h3>SignalException</h3>
+<h3>StandardError</h3>
+<h3>RuntimeError</h3>
+<h3>IOError</h3>
+<h3>ArgumentError, RangeError, TypeError, IndexError</h3>
+<h3>SystemCallError</h3>
+<h3>SecurityError</h3>
+<h3>Timeout::Error</h3>
+
+  
+    <footer>
+      
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/library/notes/exceptional-ruby.html" data-via="jschumann" data-counturl="http://jschumann.github.com/library/notes/exceptional-ruby.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/new-year/">New Year, New Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/">Chef Server Not Surviving Reboot on Ubuntu 12.04</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jschumann", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jschumann" class="twitter-follow-button" data-show-count="false">Follow @jschumann</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - James Schumann -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

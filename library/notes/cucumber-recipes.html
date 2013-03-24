@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Notes on Cucumber Recipes - Free as in Time</title>
+  <meta name="author" content="James Schumann">
+
+  
+  <meta name="description" content="Notes on Cucumber Recipes 1. Cucumber Techniques
+Recipe 1. Compare and Transform Tables of Data
+Recipe 2. Generate an RTF Report With a Custom &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jschumann.github.com/library/notes/cucumber-recipes.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Free as in Time" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Free as in Time</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jschumann.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/library/index.html">Library</a></li>
+  <li><a href="/cheat-sheets/index.html">Cheat Sheets</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Notes on Cucumber Recipes</h1>
+    
+  </header>
+  
+  <h2>1. Cucumber Techniques</h2>
+<h3>Recipe 1. Compare and Transform Tables of Data</h3>
+<h3>Recipe 2. Generate an RTF Report With a Custom Formatter</h3>
+<h3>Recipe 3. Run Slow Setup/Teardown Code With Global Hooks</h3>
+<h3>Recipe 4. Refactor to Extract Your Own Application Driver DSL</h3>
+<h3>Recipe 5. Define Steps as Regular Ruby Methods</h3>
+<h3>Recipe 6. Compare Images</h3>
+<h3>Recipe 7. Test Across Multiple Cores</h3>
+<h3>Recipe 8. Test Across Multiple Machines With SSH</h3>
+<h3>Recipe 9. Run Your Features Automatically With Guard and Growl</h3>
+<h3>Recipe 10. Add Cucumber To Your Continuous Integration Server</h3>
+<h3>Recipe 11. Publish Your Documentation on Relish</h3>
+<h3>Recipe 12. Test Through Multiple Interfaces Using Worlds</h3>
+<h3>Recipe 13. Manipulate Time</h3>
+<h3>Recipe 14. Drive Cucumber’s Wire Protocol</h3>
+<h3>Recipe 15. Implement a Wire Protocol Listener</h3>
+<h2>2. Java</h2>
+<h3>Recipe 16. Use Cucumber Directly With JRuby</h3>
+<h3>Recipe 17. Use Cucumber With Java Via Cucumber-JVM</h3>
+<h3>Recipe 18. Drive a Spring + Hibernate Project</h3>
+<h3>Recipe 19. Test a Grails App Using grails-cucumber</h3>
+<h3>Recipe 20. Test Scala Code</h3>
+<h3>Recipe 21. Test Clojure Code</h3>
+<h3>Recipe 22. Drive a Swing Interface With FEST</h3>
+<h2>3. .NET and Windows</h2>
+<h3>Recipe 23. Get Good Text Output On Windows</h3>
+<h3>Recipe 24. Test .NET Code Using Cucumber Syntax</h3>
+<h3>Recipe 25. Drive a Windows App Using White</h3>
+<h3>Recipe 26. Test Windows GUIs with Win32-Autogui</h3>
+<h3>Recipe 27. Test On Windows Phone</h3>
+<h2>4. Mobile and Web</h2>
+<h3>Recipe 28. Test On iOS Using Frank</h3>
+<h3>Recipe 29. Test Android Apps With Calabash</h3>
+<h3>Recipe 30. Parse HTML Tables</h3>
+<h3>Recipe 31. Drive JavaScript / CoffeeScript Using Cucumber-JS</h3>
+<h3>Recipe 32. Test a Web App Using Watir</h3>
+<h3>Recipe 33. Test a PHP App With cuke4php</h3>
+<h3>Recipe 34. Play Back Canned Network Data Using VCR</h3>
+<h3>Recipe 35. Drive a Flash App Using Cuke4AS3</h3>
+<h3>Recipe 36. Monitor a Web Service Using Nagios and Cucumber</h3>
+<h2>5. Other Languages and Platforms</h2>
+<h3>Recipe 37. Drive a Mac GUI Using AppleScript and System Events</h3>
+<h3>Recipe 38. Drive a Mac GUI Using MacRuby and AXElements</h3>
+<h3>Recipe 39. Test Python Code Using Lettuce</h3>
+<h3>Recipe 40. Test Erlang Code</h3>
+<h3>Recipe 41. Test Lua Code Using cucumber-lua</h3>
+<h3>Recipe 42. Test a GUI on Linux, Mac, or Windows With Sikuli</h3>
+<h3>Recipe 43. Test an Arduino Project Using Serial</h3>
+<h2>A1. RSpec Expectations</h2>
+<h3>A1.1 Basics</h3>
+<h3>A1.2 Custom Matchers</h3>
+<h3>A1.3 Alternatives</h3>
+
+  
+    <footer>
+      
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jschumann.github.com/library/notes/cucumber-recipes.html" data-via="jschumann" data-counturl="http://jschumann.github.com/library/notes/cucumber-recipes.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/new-year/">New Year, New Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/">Chef Server Not Surviving Reboot on Ubuntu 12.04</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jschumann", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jschumann" class="twitter-follow-button" data-show-count="false">Follow @jschumann</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - James Schumann -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

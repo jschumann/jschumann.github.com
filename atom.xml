@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Free as in Time]]></title>
   <link href="http://jschumann.github.com/atom.xml" rel="self"/>
   <link href="http://jschumann.github.com/"/>
-  <updated>2012-12-30T14:30:42-05:00</updated>
+  <updated>2013-03-21T17:37:38-04:00</updated>
   <id>http://jschumann.github.com/</id>
   <author>
     <name><![CDATA[James Schumann]]></name>
@@ -12,5 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Year, New Blog]]></title>
+    <link href="http://jschumann.github.com/blog/2013/01/02/new-year/"/>
+    <updated>2013-01-02T09:38:00-05:00</updated>
+    <id>http://jschumann.github.com/blog/2013/01/02/new-year</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve decided to migrate my website from WordPress to <a href="http://octopress.org/">Octopress</a>.</p>
+
+<p>Octopress is a static website generator, built on <a href="http://github.com/mojombo/jekyll">Jekyll</a>,
+with some goodies Jekyll doesn&#8217;t ship with.</p>
+
+<p>For a while now my website has been the odd man out. Updating a WordPress site just doesn&#8217;t
+fit with the rest of my workflow. I now spend most of my time editing text files and
+issuing commands from a terminal, and I store everything I build in git.
+Having my site generated from content stored in a git repository feels more natural
+to me now than storing it in a database edited via a browser interface.
+There&#8217;s no mental effort in switching to updating my website and back. It&#8217;s now
+just one project among many, all using the same set of tools and environments.</p>
+
+<p>I&#8217;ll be deploying the site to Github, at least for now. The workflow for Octopress in general,
+and deployment via GitHub in particular, is very simple. Performance should also improve, as
+serving a static site should be faster than a database-driven CMS, regardless of where I host it.
+Having to cache the hell out of WordPress, and thereby turning it into a &#8216;static&#8217; site anyway, seems silly.</p>
+
+<p>We&#8217;ll see how this goes. I&#8217;m be moving some content over from the old site for a while,
+and letting the rest of it fall off the internet.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chef Server Not Surviving Reboot on Ubuntu 12.04]]></title>
+    <link href="http://jschumann.github.com/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04/"/>
+    <updated>2012-12-14T09:54:00-05:00</updated>
+    <id>http://jschumann.github.com/blog/2012/12/14/chef-server-not-surviving-reboot-on-ubuntu-12-dot-04</id>
+    <content type="html"><![CDATA[<p>I was setting up a new Chef server on Ubuntu 12.04 and for some reason the Chef Server
+and Chef Web UI wouldn&#8217;t automatically start on (re)boot. I found the solution here:</p>
+
+<p>http://tickets.opscode.com/browse/CHEF-3204</p>
+
+<p>In case that link dries up, here&#8217;s the short answer:</p>
+
+<p>First:</p>
+
+<pre>
+sudo update-rc.d -f couchdb remove
+sudo update-rc.d -f rabbitmq-server remove
+sudo update-rc.d -f chef-solr remove
+sudo update-rc.d -f chef-expander remove
+sudo update-rc.d -f chef-server remove
+sudo update-rc.d -f chef-server-webui remove
+</pre>
+
+
+<p>Then:</p>
+
+<pre>
+# the dots are required
+sudo update-rc.d couchdb start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d rabbitmq-server start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d chef-solr start 20 2 3 4 5 . stop 22 0 1 6 .
+sudo update-rc.d chef-expander start 21 2 3 4 5 . stop 21 0 1 6 .
+sudo update-rc.d chef-server start 21 2 3 4 5 . stop 21 0 1 6 .
+sudo update-rc.d chef-server-webui start 22 2 3 4 5 . stop 20 0 1 6 .
+</pre>
+
+]]></content>
+  </entry>
   
 </feed>
