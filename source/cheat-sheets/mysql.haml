@@ -1,0 +1,36 @@
+---
+layout: page
+title: "mysql"
+comments: true
+sharing: true
+footer: true
+---
+http://itinsurrey.co.uk/blog/2010/08/17/guide-to-mysql-master-to-master-replication.htm#.UVAyD3HSl_7
+
+%blockquote
+  The standard model of MySQL replication is a single master with multiple slaves, 
+  which provides you with very good read reliability, but writes can only be made 
+  to the master node. This means that if the master fails, you can't just switch 
+  to another node and carry on as before, your slaves will become out of sync.
+  Additionally you can't load balance between your nodes for reads and writes.
+  By using a multiple master configuration, you can drop a node at any point and 
+  either switch your connection string to using the remaining master, or use 
+  load balancing and failover with HAProxy.
+
+
+http://itinsurrey.co.uk/blog/2011/01/12/load-balancing-and-failover-for-replicated-mysql.htm#.UVAyEnHSl_7
+http://dev.mysql.com/doc/refman/5.1/en/replication-solutions-backups-read-only.html
+http://dev.mysql.com/doc/refman/5.0/en/replication-options-slave.html
+http://askubuntu.com/questions/127264/cant-start-mysql-mysql-respawning-too-fast-stopped
+http://dev.mysql.com/doc/refman/5.5/en/change-master-to.html
+http://www.linuxdict.com/2012-01-mysqld-unknown-variable-master-host/
+http://tapasmishra.wordpress.com/2012/06/11/how-to-configure-mysql-5-5-server-as-replication-slave/
+http://itinsurrey.co.uk/blog/2011/01/12/load-balancing-and-failover-for-replicated-mysql.htm#.UVAvlXHSl_7
+http://itinsurrey.co.uk/blog/2010/04/30/create-a-load-balanced-web-service-on-rackspace-cloud.htm#.UVAvlXHSl_7
+
+http://www.maatkit.org/doc/mk-heartbeat.html
+http://flavio.tordini.org/a-more-stable-mysql-with-haproxy
+http://www.severalnines.com/resources/clustercontrol-mysql-haproxy-load-balancing-tutorial
+http://docs.openstack.org/trunk/openstack-ha/content/_adding_mysql_resources_to_pacemaker.html
+http://www.linux-ha.org/wiki/Mysql_(resource_agent)
+http://www.linux-ha.org/doc/man-pages/re-ra-mysql.html
