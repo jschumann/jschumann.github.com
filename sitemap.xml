@@ -31,6 +31,10 @@
         <lastmod>2013-01-02T11:24:45-05:00</lastmod>
     </url>
     <url>
+        <loc>http://jschumann.github.com/cheat-sheets/install-cd.html</loc>
+        <lastmod>2013-03-18T11:15:04-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://jschumann.github.com/cheat-sheets/haml.html</loc>
         <lastmod>2013-01-02T08:41:17-05:00</lastmod>
     </url>
@@ -39,8 +43,8 @@
         <lastmod>2013-01-02T08:41:17-05:00</lastmod>
     </url>
     <url>
-        <loc>http://jschumann.github.com/cheat-sheets/install-cd.html</loc>
-        <lastmod>2013-01-02T08:41:17-05:00</lastmod>
+        <loc>http://jschumann.github.com/cheat-sheets/nfs.html</loc>
+        <lastmod>2013-03-25T07:25:47-04:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/cheat-sheets/datamapper.html</loc>
@@ -48,15 +52,35 @@
     </url>
     <url>
         <loc>http://jschumann.github.com/cheat-sheets/rspec.html</loc>
-        <lastmod>2013-01-02T08:41:17-05:00</lastmod>
+        <lastmod>2013-03-26T14:02:40-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/mysql.html</loc>
+        <lastmod>2013-03-25T07:51:54-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/nginx.html</loc>
+        <lastmod>2013-03-25T07:07:22-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/cheat-sheets/openstack.html</loc>
+        <lastmod>2013-03-25T07:10:27-04:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/cheat-sheets/chef.html</loc>
         <lastmod>2013-01-02T08:41:17-05:00</lastmod>
     </url>
     <url>
+        <loc>http://jschumann.github.com/cheat-sheets/drbd.html</loc>
+        <lastmod>2013-03-25T07:12:29-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://jschumann.github.com/resume.html</loc>
+        <lastmod>2013-04-17T14:31:07-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://jschumann.github.com/library/</loc>
-        <lastmod>2013-01-02T14:14:05-05:00</lastmod>
+        <lastmod>2013-03-18T10:01:54-04:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/behind-closed-doors.html</loc>
@@ -64,19 +88,19 @@
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/cucumber-book.html</loc>
-        <lastmod>2013-01-03T08:56:06-05:00</lastmod>
+        <lastmod>2013-01-04T09:24:44-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/exceptional-ruby.html</loc>
-        <lastmod>2013-01-03T09:16:53-05:00</lastmod>
+        <lastmod>2013-01-04T09:58:58-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/rails-view.html</loc>
-        <lastmod>2013-01-03T11:12:45-05:00</lastmod>
+        <lastmod>2013-01-04T14:24:27-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/deploying-with-jruby.html</loc>
-        <lastmod>2013-01-03T09:09:31-05:00</lastmod>
+        <lastmod>2013-01-04T07:11:00-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/driving-technical-change.html</loc>
@@ -84,53 +108,53 @@
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/lean-from-the-trenches.html</loc>
-        <lastmod>2013-01-03T09:18:55-05:00</lastmod>
+        <lastmod>2013-01-04T11:51:13-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/rails-recipes.html</loc>
-        <lastmod>2013-01-03T11:12:19-05:00</lastmod>
+        <lastmod>2013-01-04T14:01:38-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/pragmatic-version-control-git.html</loc>
-        <lastmod>2013-01-03T11:10:28-05:00</lastmod>
+        <lastmod>2013-01-04T13:37:32-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/gis-for-web-developers.html</loc>
-        <lastmod>2013-01-03T09:17:41-05:00</lastmod>
+        <lastmod>2013-01-04T11:21:01-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/crafting-rails-apps.html</loc>
-        <lastmod>2013-01-03T08:55:23-05:00</lastmod>
+        <lastmod>2013-01-03T14:00:26-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://jschumann.github.com/library/notes/pragmatic-version-control-subversion.html
         </loc>
-        <lastmod>2013-01-03T11:11:00-05:00</lastmod>
+        <lastmod>2013-01-04T13:50:41-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/rspec-book.html</loc>
-        <lastmod>2013-01-03T11:13:11-05:00</lastmod>
+        <lastmod>2013-01-04T14:36:54-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/developers-code.html</loc>
-        <lastmod>2013-01-03T11:07:50-05:00</lastmod>
+        <lastmod>2013-01-04T09:38:06-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/technical-blogging.html</loc>
-        <lastmod>2013-01-03T11:15:58-05:00</lastmod>
+        <lastmod>2013-03-18T10:01:54-04:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/manage-your-project-portfolio.html</loc>
-        <lastmod>2013-01-03T09:19:43-05:00</lastmod>
+        <lastmod>2013-01-04T12:07:37-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/practices-of-an-agile-developer.html</loc>
-        <lastmod>2013-01-03T11:09:34-05:00</lastmod>
+        <lastmod>2013-01-04T13:29:35-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/pomodoro-technique-illustrated.html</loc>
-        <lastmod>2013-01-03T09:21:17-05:00</lastmod>
+        <lastmod>2013-01-04T13:17:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/explore-it.html</loc>
@@ -138,15 +162,15 @@
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/cucumber-recipes.html</loc>
-        <lastmod>2013-01-03T08:56:55-05:00</lastmod>
+        <lastmod>2013-01-04T09:30:06-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/new-programmers-survival-manual.html</loc>
-        <lastmod>2013-01-03T09:20:20-05:00</lastmod>
+        <lastmod>2013-01-04T12:12:01-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/ship-it.html</loc>
-        <lastmod>2013-01-03T11:15:27-05:00</lastmod>
+        <lastmod>2013-03-18T10:01:54-04:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/tmux.html</loc>
@@ -154,7 +178,7 @@
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/awesome-command-line-apps-ruby.html</loc>
-        <lastmod>2013-01-03T08:50:02-05:00</lastmod>
+        <lastmod>2013-01-03T13:53:46-05:00</lastmod>
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/practical-vim.html</loc>
@@ -166,6 +190,6 @@
     </url>
     <url>
         <loc>http://jschumann.github.com/library/notes/land-the-tech-job-you-love.html</loc>
-        <lastmod>2013-01-03T09:18:08-05:00</lastmod>
+        <lastmod>2013-01-04T11:38:20-05:00</lastmod>
     </url>
 </urlset>

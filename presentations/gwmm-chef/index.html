@@ -1,0 +1,460 @@
+<!--
+Guelph Web Maker Meetup HTML5 Slide Template
+
+Author: James Schumann
+
+Forked from work by: Eric Bidelman <ebidel@gmail.com>
+                     Luke Mahé <lukem@google.com>
+
+URL: https://github.com/jschumann/gwmm-slides 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/gwmm-logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <!--<aside class="gdbar"><img src="images/gwmm-logo.png"></aside>-->
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Stop me if you've heard this one...</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>"I didn't change anything. [2 hours later] Well, yeah, I changed <em>that</em>."</li>
+        <li>"It works on my machine."</li>
+        <li>"We just hired somebody new."</li>
+        <li>"Here's your new laptop. Spend a day or two setting it up like your old one.</li>
+        <li>"We need to rebuild that server."</li>
+        <li>"We're doing a deployment. On Friday. At 5pm."</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Agents of Entropy</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Cowboys</li>
+        <li>"Fuck it. We'll do it live."</li>
+        <li>Laziness</li>
+        <li>Expediency</li>
+        <li>Broken windows</li>
+        <li>Heisenberg</li>
+        <li>Endless, time eating bullshit, tracking down changes, differences, etc.</li>
+        <li>Michael Denny</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Sleepless Nights</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Ask for a complete list of the differences between your dev and production environments.</li>
+        <li>How do you know you found them all?</li>
+        <li>How will you know when that list changes?</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>DevOps - Origins (2006)</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Cheap, utility computing (AWS) + </li>
+        <li>Short time to market (Rails) + </li>
+        <li>Web scale (ZOMG! We went viral!) = </li>
+        <li>Big scaling issues for small teams with no budget</li>
+        <li>
+          And for everybody else:
+          <br /><br /><img src="opscode_server_complexity.jpg" width="700px" class="reflect" alt="Scale and Complexity" title="Scale and Complexity" />
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>DevOps for Webslingers</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Division between infrastructure and application now blurred or artificial</li>
+        <li>Same is true of the division between developers and system administrators</li>
+        <li>If you own a computer, you're a sysadmin. Everything else is a matter of scale.</li>
+        <li>If you maintain vhosts in Apache, or DNS entries, you're a dev.</li>
+        <li>Developers share operational responsibilities.</li>
+        <li>Sysadmins can think strategically.</li>
+        <li>Cooperation. Kumbaya.</li>
+        <li>This is not new for most webdevs. Now it has a name.</li>
+      </ul>
+    </article>
+  </slide>
+ 
+  <slide>
+    <hgroup>
+      <h2>Infrastructure as Code</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>We have tools to design, build, deploy, and maintain complex software.</li>
+        <li>Every piece of software is unique, but we use standard patterns and tools to make it.</li>
+        <li>We can use those same tools to build IT infrastructure the way we build software.</li>
+        <li>We can model, build, deploy, and manage infrastructure using mature tools.</li>
+        <li>A lot of our infrastructure is code these days anyway. Might as well use coding tools.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Benefits</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Repeatability – Known inputs, known outputs</li>
+        <li>Automation – Software deployment tools</li>
+        <li>Agility – Change, forward or back, is cheap</li>
+        <li>Scalability – Repeatability + Automation</li>
+        <li>Reassurance – live documentation</li>
+        <li>Disaster recovery – bare metal + code</li>
+        <li>Auditing – what changed, when, by whom?</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Benfits (con't)</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Tiny cycle time – wide change is as cheap as narrow change</li>
+        <li>Testable – code can be tested automatically</li>
+        <li>Verifiable – current state can be queried</li>
+        <li>Higher quality – continuous improvement, not continuous troubleshooting</li>
+        <li>Predictable – testable + verifiable</li>
+        <li>Lower stress – we've done this 100 times</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Principles</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Modularity – break it down; eliminate overlap</li>
+        <li>Cooperation – encourage reuse instead</li>
+        <li>Composability – Lego</li>
+        <li>Extensibility – easier to enhance small stuff</li>
+        <li>Flexibility – small scope + unlimited power</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Principles (con't)</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Repeatability – known inputs, known outputs</li>
+        <li>Declaration – what, not how</li>
+        <li>Abstraction – function, not implementation</li>
+        <li>Idempotence – run many times; change once</li>
+        <li>Convergence – services come into line with policy; system tends to correctness</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Chef = Infrastructure as Code</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Configuration server (Chef Server)</li>
+        <li>Infrastructure parts are clients (Chef Client)</li>
+        <li>Workflow:
+          <ul>
+            <li>Write configuration code locally</li>
+            <li>Push configuration code to the Chef server</li>
+            <li>Node phones home; configuration updated from server</li>
+            <li>Lather, rinse, repeat</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Why Chef?</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Modern. CFEngine, I'm looking at you.</li>
+        <li>Cross-platform</li>
+        <li>Free &amp; Open Source, with support for hire</li>
+        <li>Very popular; big community; getting bigger</li>
+        <li>Under active development</li>
+        <li>I don't have to say "Puppet" in meetings.</li>
+        <li>All Ruby, all the time</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Parts of Chef</h2>
+    </hgroup>
+    <article>
+      <ul style="float:left">
+        <li>Chef Server</li>
+        <li>Knife (CLI client)</li>
+        <li>WebUI</li>
+        <li>Nodes and Chef Client</li>
+        <li>Recipes</li>
+        <li>Cookbooks</li>
+        <li>Roles and Environments</li>
+        <li>Users and Organizations</li>
+      </ul>
+      <img style="float:right" src="diag-ChefOpscodeArchitecture-v2.png" alt="Parts of Chef" title="Parts of Chef" />
+      <div style="clear:both"></div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Nodes and Clients</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Nodes are the systems you are managing with Chef.</li>
+        <li>Nodes are typically servers.</li>
+        <li>Nodes are why we want to use Chef.</li>
+        <li>Clients are things which connect to the Chef server, using the Chef API.</li>
+        <li>Clients include nodes configured through Chef, as well as workstations which are used to manage Chef.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Recipes</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Recipes are the files where you write and store chunks of configuration.</li>
+        <li>Recipes get applied to nodes.</li>
+        <li>This is were the awesome lives.</li>
+        <li>The configuration is code.</li>
+        <li>The code can be version controlled.</li>
+        <li>All the tools we use to manage code can be used to manage configuration.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Recipes as Policy</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>A recipe is really a "policy".</li>
+        <li>Applying a recipe to a node brings the node into compliance with policy as defined in the recipe.</li>
+        <li>Recipes only do stuff if stuff needs to be done.</li>
+        <li>Recipes can be applied as often as you'd like, without damaging the node.</li>
+        <li>When in doubt, apply your recipe(s). Your node(s) will now be in a known state.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Cookbooks</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Cookbooks are exactly what they sound like: collections of recipes.</li>
+        <li>
+          They can also contain supporting files, such as: 
+          <ul>
+            <li>files containing attributes</li>
+            <li>configuration file templates</li>
+            <li>files to be uploaded as-is</li>
+          </ul>
+        </li>
+        <li>The MySQL cookbook for example, contains recipes for both client and server, plus an attributes file to set sane defaults.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Cookbooks are Sharable</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Cookbooks can be authored by anyone with basic programming skills.</li>
+        <li>They can be written without storing any details about a particular deployed environment.</li>
+        <li>This means they can be shared safely and reused across organization and company boundaries.</li>
+        <li><a href="http://community.opscode.com/cookbooks">http://community.opscode.com/cookbooks</a></li>
+        <li><a href="https://github.com/opscode-cookbooks">https://github.com/opscode-cookbooks</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Roles</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Roles are collections of configuration applied to nodes with something in common.</li>
+        <li>The role "high_school_file_server" would keep configuration in sync across all its members.</li>
+        <li>Nodes can have more than one role, and roles can stack or nest together.</li>
+        <li>We might have a node with the roles "base", "ubuntu", "webserver", "php", "wordpress", "my_site".</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Environments</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Environments are the other way we group things.</li>
+        <li>These "things" are mostly specific values within the configuration of a node, such as a cookbook version number.</li>
+        <li>Environments typically include "production", "staging", "development", and "testing".</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Roles vs. Environments Example</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Two nodes in the same role, but different environments, might be running two different versions of the same cookbook.</li>
+        <li>One node, in the "production" environment, runs a stable version of the "my-application" cookbook.</li>
+        <li>The other node, in the "development" environment, runs an untested version.</li>
+        <li>Everything else is the same, so there are no surprises when we move from dev to prod.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Users</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Users are what you think they are: humans who connect to Chef.</li>
+        <li>Like clients, they have keys that they can use to connect to Chef programmatically.</li>
+        <li>Users also have passwords that they can use to log in to the various web pages that the Chef server exposes.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Organizations</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Users can be associated with organizations.</li>
+        <li>Your organization may represent your entire company, or the department you work in, or any other grouped set of infrastructure you plan on managing.</li>
+        <li>Membership gives you certain rights to interact with and manage your organization.</li>
+        <li>Users can be associated with more than one organization.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Big Picture</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="overview_chef_draft.png" alt="Description" title="Description">
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/gwmm-logo.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/gwmm-logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
